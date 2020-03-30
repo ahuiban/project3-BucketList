@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const app = express()
 const PORT = 3003
 const cors = require("cors")
-const animalsController = require('./controllers/bucketList.js')
+const bucketListController = require('./controllers/bucketLists.js')
 
 app.use(cors());
 app.use(express.json())
-app.use('/bucketlist', bucketListController)
+app.use('/bucketlists', bucketListController)
 
 
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
