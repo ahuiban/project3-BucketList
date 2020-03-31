@@ -64,6 +64,7 @@ bucketLists.get('/seed', async (req, res) => {
             items: ["hawaii", "tahiti", "galapagos"]
         }
     ]
+    
 
     try {
         const seedItems = await BucketList.create(bucketListSampleData)
