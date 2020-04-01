@@ -1,8 +1,14 @@
+require('dotenv').config();
+
+
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
-const PORT = 3003
+const PORT = process.env.PORT || 3003
 const cors = require("cors")
+
+app.use(cors());
+app.use(express.json())
 
 //required controllers
 const bucketListController = require('./controllers/bucketLists.js')
@@ -12,15 +18,15 @@ const usersController = require('./controllers/users.js')
 app.use('/users', usersController)
 
 
-app.use(cors());
-app.use(express.json())
 
 
+//MONGOOSE
+const MONGODB_URI = process.env.MONGODB_URI || 'heroku link goes here'
 
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
 
-mongoose.connect('mongodb://localhost:27017/bucketlist', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 mongoose.connection.once('open', ()=>{
     console.log('connected to mongoose...')
 })
