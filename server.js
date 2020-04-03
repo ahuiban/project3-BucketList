@@ -16,6 +16,9 @@ app.use("/bucketlists", bucketListController);
 const usersController = require("./controllers/users.js");
 app.use("/users", usersController);
 
+const sessionsController = require("./controllers/sessions.js");
+app.use("/sessions", sessionsController);
+
 //MONGOOSE
 const MONGODB_URI = process.env.MONGODB_URI || "heroku link goes here";
 
