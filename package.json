@@ -1,7 +1,7 @@
 {
-  "name": "BucketList",
+  "name": "bucketlist",
   "version": "1.0.0",
-  "description": "",
+  "description": "## The Website:",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glicksauce/project3-backEnd.git"
+    "url": "git+https://github.com/ahuiban/project3-backEnd.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/glicksauce/project3-backEnd/issues"
+    "url": "https://github.com/ahuiban/project3-backEnd/issues"
   },
-  "homepage": "https://github.com/glicksauce/project3-backEnd#readme",
+  "homepage": "https://github.com/ahuiban/project3-backEnd#readme",
   "dependencies": {
     "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
