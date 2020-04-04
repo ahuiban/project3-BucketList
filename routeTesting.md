@@ -1,3 +1,6 @@
+//GET bucklist seed data
+curl http://localhost:3003/bucketlists/seed
+
 //GET list of users
 curl http://localhost:3003/users
 

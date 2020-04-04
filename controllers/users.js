@@ -21,8 +21,8 @@ users.post('/', (req, res) => {
     req.body.username = req.body.username.toLowerCase()
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     User.create(req.body, (err, createdUser) =>{
-        User.find({}, (error, users) =>{
-            return res.json(users)
+        User.findOne(createdUser._id, (error, user) =>{
+            return res.json(user)
         })
     })
 })
