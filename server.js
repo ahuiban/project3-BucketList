@@ -6,9 +6,15 @@ const mongoose = require('mongoose')
 const app = express()
 const PORT = process.env.PORT || 3003
 const cors = require("cors")
+const session = require('express-session')
 
 app.use(cors());
 app.use(express.json())
+app.use(session({
+    secret: "proj3forhire", //some random string
+    resave: false,
+    saveUninitialized: false
+  }));
 
 //required controllers
 const bucketListController = require('./controllers/bucketLists.js')
@@ -17,7 +23,8 @@ app.use('/bucketlists', bucketListController)
 const usersController = require('./controllers/users.js')
 app.use('/users', usersController)
 
-
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 
 //MONGOOSE
@@ -33,7 +40,12 @@ mongoose.connection.once('open', ()=>{
 
 //Redirect
 app.get('/', (req,res) =>{
-    res.redirect('/bucketlists')
+    if(req.session.currentUser){
+        res.redirect('/bucketlists')
+    } else {
+        res.redirect('/sessions/new')
+    }
+    
 })
 
 app.listen(PORT, () => {

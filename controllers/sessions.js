@@ -5,8 +5,8 @@ const session = require('express-session')
 const bcrypt = require('bcrypt')
 
 router.get('/new', (req, res) => {
-    res.render('sessions/new.ejs');
-});
+    res.send("<h3>Login to your account</h3>")
+})
 
 router.post('/', (req, res)=>{
     User.findOne({ username: req.body.username },(err, foundUser) => {
