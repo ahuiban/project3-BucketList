@@ -14,10 +14,9 @@ router.post('/', (req, res)=>{
             console.log("Username not found")
             let userNotFound = true;
         } else  if( bcrypt.compareSync(req.body.password, foundUser.password) ){
-            req.session.currentUser = foundUser;
-            return res.json(foundUser)
+            res.status(200).json(foundUser)
         } else {
-            res.send('wrong password');
+            res.status(400).json("wrong password")
         }
     });
 });
