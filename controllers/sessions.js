@@ -15,7 +15,7 @@ router.post('/', (req, res)=>{
             let userNotFound = true;
         } else  if( bcrypt.compareSync(req.body.password, foundUser.password) ){
             req.session.currentUser = foundUser;
-            res.redirect('/bucketlists');
+            return res.json(foundUser)
         } else {
             res.send('wrong password');
         }
