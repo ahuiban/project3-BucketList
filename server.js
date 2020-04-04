@@ -1,5 +1,4 @@
-require('dotenv').config();
-
+require("dotenv").config();
 
 const express = require('express')
 const mongoose = require('mongoose')
@@ -26,17 +25,18 @@ app.use('/users', usersController)
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
-
 //MONGOOSE
-const MONGODB_URI = process.env.MONGODB_URI || 'heroku link goes here'
+const MONGODB_URI = process.env.MONGODB_URI || "heroku link goes here";
 
-mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
-mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
+mongoose.connection.on("error", err =>
+  console.log(err.message + " is Mongod not running?")
+);
+mongoose.connection.on("disconnected", () => console.log("mongo disconnected"));
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
-mongoose.connection.once('open', ()=>{
-    console.log('connected to mongoose...')
-})
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+mongoose.connection.once("open", () => {
+  console.log("connected to mongoose...");
+});
 
 //Redirect
 app.get('/', (req,res) =>{
@@ -49,5 +49,5 @@ app.get('/', (req,res) =>{
 })
 
 app.listen(PORT, () => {
-    console.log('listening on port', PORT)
-})
+  console.log("listening on port", PORT);
+});
