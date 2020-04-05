@@ -2,7 +2,7 @@ const express = require('express')
 const bucketLists = express.Router()
 const BucketList = require ('../models/bucketList.js')
 
-//INDEX Route
+//HOME Route
 bucketLists.get('/', (req,res) => {
     BucketList.find({}, (err, foundBucketLists) => {
         if (err) {
@@ -40,7 +40,7 @@ bucketLists.delete('/:id', (req,res) => {
         if (err) {
             res.status(400).json({ error: err.message })
         }
-        res.status(200).json(deletedAnimal)
+        res.status(200).json(deletedBucketList)
     })
 })
 
