@@ -12,10 +12,12 @@ router.post('/', (req, res)=>{
     User.findOne({ username: req.body.username },(err, foundUser) => {
         if (foundUser == null) {
             console.log("Username not found")
+            res.json("username not found")
             let userNotFound = true;
         } else  if( bcrypt.compareSync(req.body.password, foundUser.password) ){
             res.status(200).json(foundUser)
         } else {
+            console.log("wrong password")
             res.status(400).json("wrong password")
         }
     });
