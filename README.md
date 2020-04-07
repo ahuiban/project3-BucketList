@@ -1,11 +1,12 @@
-
 # Project 3 - Bucket List - backEnd
 
-## The Website: 
+## The Website:
 
 via Heroku - TBD
 
 ## Technologies used
+
+Mongoose, Express, React, and Node.js.
 
 ## The approach taken
 
@@ -13,13 +14,8 @@ via Heroku - TBD
 
 ## User stories
 
+An app that allows users to categorize all the activities they find online in one easy accessible place.
+
 ### Notes
 
 ### Wireframe
-
-# project3-BucketList
-https://git.generalassemb.ly/ira/SEIR-FLEX-123/tree/master/projects/project_3
-
-Routes:
-Using bucketlist, ex. localhost:3003/bucketlist for index route
-Seed data: localhost:3003/bucketlist/seed
