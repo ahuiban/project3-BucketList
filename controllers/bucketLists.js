@@ -170,9 +170,15 @@ bucketLists.get('/seed', async (req, res) => {
             }]
         },
         {
-            listName: "sample list 3",
-            ownerID: "333333335",
-            items: ["hawaii", "tahiti", "galapagos"]
+            listName: "new list 333",
+            ownerID: "Jay",
+            items: [{
+                itemName: "Prague",
+                itemDescription: "",
+                itemCategory: "Places",
+                itemImageURL: "",
+                isCompleted: false  
+            }]
         }
     ]
     
